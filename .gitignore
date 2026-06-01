@@ -4,6 +4,8 @@ __pycache__/
 .env
 *.log
 fixed_templates/
-research_results/*.xlsx
-research_results/*.csv
-/tmp/
+research_results/
+new_experiments_log.txt
+broken_template.yaml
+pipeline_gemini.py
+run_gemini_experiments.py
