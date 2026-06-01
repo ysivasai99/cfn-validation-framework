@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: VPC + EC2 - Wrong AZ + Invalid AMI
+Resources:
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+  MySubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: us-west-9z
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-00000000
+      InstanceType: t2.micro
+      SubnetId: !Ref MySubnet

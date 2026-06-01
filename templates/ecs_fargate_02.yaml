@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyCluster:
+    Type: AWS::ECS::Cluster
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: web-task
+      NetworkMode: awsvpc
+      RequiresCompatibilities: [FARGATE]
+      Cpu: INVALID_CPU_VALUE
+      Memory: INVALID_MEM_VALUE
+      ContainerDefinitions:
+        - Name: web
+          Image: nginx
+          PortMappings:
+            - ContainerPort: 99999
+              Protocol: INVALID_PROTOCOL

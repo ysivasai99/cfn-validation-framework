@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ECS - Missing cluster ref
+Resources:
+  MyService:
+    Type: AWS::ECS::Service
+    Properties:
+      ServiceName: my-service
+      Cluster: !Ref NonExistentCluster
+      DesiredCount: 1
+      TaskDefinition: !Ref NonExistentTaskDef

@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+  MyQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 99999
+  MyFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: python0.1
+      Handler: index.handler
+      Role: !Ref NonExistentRole
+      Code:
+        ZipFile: |
+          def handler(e, c): return 'ok'
+  MyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: INVALID_MODE
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: INVALID_TYPE
+      KeySchema:
+        - AttributeName: id
+          KeyType: INVALID_KEY

@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '1999-01-01'
+        Statement:
+          - Effect: INVALID_EFFECT
+            Principal:
+              Service: INVALID_SERVICE
+            Action: sts:AssumeRole
+  MyPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: '1999-01-01'
+        Statement:
+          - Effect: INVALID_EFFECT
+            Action: '*'
+            Resource: '*'

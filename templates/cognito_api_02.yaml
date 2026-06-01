@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      MfaConfiguration: 'OFF'
+      UsernameAttributes: [email]
+      PasswordPolicy:
+        MinimumLength: 1
+        RequireUppercase: NOT_A_BOOL
+  MyApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: my-api

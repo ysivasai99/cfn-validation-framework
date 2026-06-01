@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ECS - Invalid launch type
+Resources:
+  MyCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: my-cluster
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: my-task
+      NetworkMode: awsvpc
+      RequiresCompatibilities: [INVALID_LAUNCH_TYPE]
+      ContainerDefinitions:
+        - Name: my-container
+          Image: nginx:latest
+          Memory: 512

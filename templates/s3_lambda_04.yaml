@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: S3 + Lambda - Missing Role
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-valid-bucket-001
+  MyFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: my-function
+      Runtime: python3.9
+      Handler: index.handler
+      Role: !Ref NonExistentRole
+      Code:
+        ZipFile: |
+          def handler(event, context):
+            return 'Hello'

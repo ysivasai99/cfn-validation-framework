@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Complex - S3 + CloudFront + Route53 errors
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: INVALID$$BUCKET
+      AccessControl: INVALID_ACL
+      VersioningConfiguration:
+        Status: INVALID_STATUS
+  MyDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt MyBucket.RegionalDomainName
+            Id: my-origin
+            S3OriginConfig: {}
+        DefaultCacheBehavior:
+          TargetOriginId: my-origin
+          ViewerProtocolPolicy: INVALID_POLICY
+          ForwardedValues:
+            QueryString: false
+        PriceClass: INVALID_PRICE_CLASS
+        Enabled: true

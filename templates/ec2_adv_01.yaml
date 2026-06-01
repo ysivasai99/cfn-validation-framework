@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 - Multiple wrong values
+Resources:
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 999.0.0.0/16
+  MySubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: us-east-99z
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-INVALID123
+      InstanceType: t99.nano
+      SubnetId: !Ref MySubnet

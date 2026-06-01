@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Step Functions - Invalid type
+Resources:
+  MyStateMachine:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      StateMachineName: my-state-machine
+      StateMachineType: INVALID_TYPE
+      RoleArn: arn:aws:iam::123456789012:role/sfn-role
+      DefinitionString: |
+        {
+          "Comment": "My state machine",
+          "StartAt": "HelloWorld",
+          "States": {
+            "HelloWorld": {
+              "Type": "INVALID_STATE_TYPE",
+              "End": true
+            }
+          }
+        }

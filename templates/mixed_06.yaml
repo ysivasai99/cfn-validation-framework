@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: states.amazonaws.com
+            Action: sts:AssumeRole
+  MyStateMachine:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      StateMachineType: STANDARD
+      RoleArn: !GetAtt MyRole.Arn
+      DefinitionString: |
+        {"StartAt":"Process","States":{"Process":{"Type":"Pass","End":true}}}
+  MyQueue:
+    Type: AWS::SQS::Queue
+  MyTopic:
+    Type: AWS::SNS::Topic

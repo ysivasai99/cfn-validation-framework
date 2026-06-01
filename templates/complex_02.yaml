@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Complex - Lambda + DynamoDB + SQS multiple errors
+Resources:
+  MyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: my-table
+      BillingMode: INVALID_MODE
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: INVALID
+      KeySchema:
+        - AttributeName: id
+          KeyType: INVALID_KEY
+  MyQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: my-queue
+      VisibilityTimeout: 99999
+      MessageRetentionPeriod: 9999999
+  MyFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: my-function
+      Runtime: python0.1
+      Handler: index.handler
+      MemorySize: 99999
+      Timeout: 99999
+      Role: !Ref NonExistentRole
+      Code:
+        ZipFile: |
+          def handler(event, context):
+            return 'Hello'

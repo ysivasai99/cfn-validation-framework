@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: IAM - Invalid policy version
+Resources:
+  MyPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: my-policy
+      PolicyDocument:
+        Version: '1999-01-01'
+        Statement:
+          - Effect: Allow
+            Action: s3:GetObject
+            Resource: '*'

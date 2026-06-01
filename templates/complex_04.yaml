@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Complex - ECS + ECR + ALB errors
+Resources:
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+  MySubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs '']
+  MyCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: my-cluster
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: my-task
+      NetworkMode: INVALID_NETWORK_MODE
+      RequiresCompatibilities: [INVALID_LAUNCH_TYPE]
+      Cpu: INVALID_CPU
+      Memory: INVALID_MEMORY
+      ContainerDefinitions:
+        - Name: my-container
+          Image: nginx:latest
+          Memory: 512

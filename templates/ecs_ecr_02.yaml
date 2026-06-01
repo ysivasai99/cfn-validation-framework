@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ECS - Invalid network mode
+Resources:
+  MyCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: my-cluster
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: my-task
+      NetworkMode: invalid-mode
+      RequiresCompatibilities: [FARGATE]
+      ContainerDefinitions:
+        - Name: my-container
+          Image: nginx:latest
+          Memory: 512

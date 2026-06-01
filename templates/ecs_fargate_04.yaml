@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: my-repo
+      ImageScanningConfiguration:
+        ScanOnPush: NOT_A_BOOL
+      ImageTagMutability: INVALID_VALUE

@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyTopic:
+    Type: AWS::SNS::Topic
+  MyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: rds-connections
+      MetricName: DatabaseConnections
+      Namespace: AWS/RDS
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 100
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      AlarmActions: [!Ref MyTopic]

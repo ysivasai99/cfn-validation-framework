@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SNS - Invalid protocol
+Resources:
+  MyTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: my-topic
+  MySubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      TopicArn: !Ref MyTopic
+      Protocol: invalid-protocol
+      Endpoint: test@example.com

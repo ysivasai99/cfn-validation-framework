@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyTopic:
+    Type: AWS::SNS::Topic
+  MyAlarm1:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: cpu-alarm
+      MetricName: CPUUtilization
+      Namespace: AWS/EC2
+      Statistic: Average
+      Period: 60
+      EvaluationPeriods: 1
+      Threshold: 80
+      ComparisonOperator: GreaterThanThreshold
+  MyAlarm2:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: disk-alarm
+      MetricName: DiskReadOps
+      Namespace: AWS/EC2
+      Statistic: INVALID_STATISTIC
+      Period: 99999
+      EvaluationPeriods: 0
+      Threshold: 1000
+      ComparisonOperator: INVALID_OPERATOR

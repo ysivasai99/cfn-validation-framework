@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyCacheSubnet:
+    Type: AWS::ElastiCache::SubnetGroup
+    Properties:
+      Description: Cache subnet
+      SubnetIds: [!Ref NonExistentSubnet]
+  MyCache:
+    Type: AWS::ElastiCache::CacheCluster
+    Properties:
+      CacheNodeType: cache.invalid.type
+      Engine: INVALID_ENGINE
+      NumCacheNodes: 0
+      CacheSubnetGroupName: !Ref MyCacheSubnet
+  MyStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      ShardCount: 0

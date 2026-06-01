@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: DynamoDB - Missing ref
+Resources:
+  MyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: my-table
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+  MyFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: my-function
+      Runtime: python3.9
+      Handler: index.handler
+      Role: arn:aws:iam::123456789012:role/lambda-role
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref NonExistentTable
+      Code:
+        ZipFile: |
+          def handler(event, context):
+            return 'Hello'

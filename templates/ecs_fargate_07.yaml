@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyCluster:
+    Type: AWS::ECS::Cluster
+  MyRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: my-app-repo
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: sts:AssumeRole
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: app-task
+      NetworkMode: awsvpc
+      RequiresCompatibilities: [FARGATE]
+      Cpu: '256'
+      Memory: '512'
+      ExecutionRoleArn: !GetAtt MyRole.Arn
+      ContainerDefinitions:
+        - Name: app
+          Image: nginx:latest
+          Memory: 512
+          Essential: true

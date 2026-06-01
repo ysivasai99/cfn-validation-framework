@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: IAM - Invalid policy effect
+Resources:
+  MyPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: my-policy
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: InvalidEffect
+            Action: s3:GetObject
+            Resource: '*'
+      Roles: []

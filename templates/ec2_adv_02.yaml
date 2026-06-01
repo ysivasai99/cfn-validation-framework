@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 - Missing multiple refs
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c02fb55956c7d316
+      InstanceType: t2.micro
+      SubnetId: !Ref NonExistentSubnet
+      SecurityGroupIds:
+        - !Ref NonExistentSG
+      KeyName: !Ref NonExistentKey

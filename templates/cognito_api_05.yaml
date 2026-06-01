@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      MfaConfiguration: 'ON'
+      UsernameAttributes: [email]
+      AutoVerifiedAttributes: [email]
+  MyClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref MyUserPool
+      ExplicitAuthFlows: [ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH]
+  MyApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: cognito-api

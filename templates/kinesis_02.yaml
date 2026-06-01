@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Kinesis Firehose - Invalid compression
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-firehose-bucket-test
+  MyDeliveryStream:
+    Type: AWS::KinesisFirehose::DeliveryStream
+    Properties:
+      DeliveryStreamName: my-stream
+      DeliveryStreamType: INVALID_TYPE
+      S3DestinationConfiguration:
+        BucketARN: !GetAtt MyBucket.Arn
+        CompressionFormat: INVALID_FORMAT
+        RoleARN: arn:aws:iam::123456789012:role/firehose-role

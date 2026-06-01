@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Complex - VPC + EC2 + RDS + S3 multiple errors
+Resources:
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 999.999.0.0/16
+  MySubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: us-invalid-99z
+  MySubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: us-invalid-99z
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: INVALID$$BUCKET###
+  MyDB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBInstanceClass: db.invalid.mega
+      Engine: invalid-engine-xyz
+      MasterUsername: admin
+      MasterUserPassword: pass123
+      AllocatedStorage: 99999
+      DBSubnetGroupName: !Ref NonExistentGroup
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-XXXXXXXXXX
+      InstanceType: z99.superlarge
+      SubnetId: !Ref MySubnet1

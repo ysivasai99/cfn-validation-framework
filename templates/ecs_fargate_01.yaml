@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyCluster:
+    Type: AWS::ECS::Cluster
+  MyRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: INVALID$$REPO###NAME
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: my-task
+      NetworkMode: INVALID_NETWORK_MODE
+      RequiresCompatibilities: [INVALID_TYPE]
+      Cpu: INVALID_CPU
+      Memory: INVALID_MEMORY
+      ExecutionRoleArn: !Ref NonExistentRole
+      ContainerDefinitions:
+        - Name: app
+          Image: nginx:latest
+          Memory: 512
+          Essential: NOT_A_BOOL

@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: DynamoDB - Invalid key type
+Resources:
+  MyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: my-table
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: INVALID_TYPE
+      KeySchema:
+        - AttributeName: id
+          KeyType: INVALID_KEY_TYPE

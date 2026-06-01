@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SNS - Invalid subscription + missing ref
+Resources:
+  MyTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: my-topic
+      Subscription:
+        - Protocol: INVALID_PROTOCOL
+          Endpoint: test@example.com
+  MyQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: my-queue
+  MySubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      TopicArn: !Ref NonExistentTopic
+      Protocol: sqs
+      Endpoint: !GetAtt MyQueue.Arn

@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      MfaConfiguration: INVALID_VALUE
+      UsernameAttributes: [phone_number]
+  MyClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref MyUserPool
+      ExplicitAuthFlows: [ALLOW_USER_PASSWORD_AUTH]

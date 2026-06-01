@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudWatch + IAM - Multiple errors
+Resources:
+  MyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: my-alarm
+      MetricName: CPUUtilization
+      Namespace: AWS/EC2
+      Statistic: InvalidStat
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 80
+      ComparisonOperator: InvalidOperator
+  MyPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: my-policy
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: InvalidEffect
+            Action: s3:GetObject
+            Resource: '*'
+      Roles: []

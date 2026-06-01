@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyTopic:
+    Type: AWS::SNS::Topic
+  MyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: high-cpu
+      MetricName: CPUUtilization
+      Namespace: AWS/EC2
+      Statistic: INVALID_STAT
+      Period: 99999
+      EvaluationPeriods: 0
+      Threshold: 80
+      ComparisonOperator: INVALID_OP
+      AlarmActions: [!Ref MyTopic]

@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: IAM - Multiple errors
+Resources:
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: my-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: INVALID_EFFECT
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+  MyPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: my-policy
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: INVALID_EFFECT
+            Action: s3:*
+            Resource: '*'
+      Roles: [!Ref MyRole]

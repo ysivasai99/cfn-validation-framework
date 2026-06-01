@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+  MyStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      ShardCount: 1
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '1999-01-01'
+        Statement:
+          - Effect: INVALID_EFFECT
+            Principal:
+              Service: firehose.amazonaws.com
+            Action: sts:AssumeRole
+  MyFirehose:
+    Type: AWS::KinesisFirehose::DeliveryStream
+    Properties:
+      DeliveryStreamType: KinesisStreamAsSource
+      KinesisStreamSourceConfiguration:
+        KinesisStreamARN: !GetAtt MyStream.Arn
+        RoleARN: !GetAtt MyRole.Arn
+      S3DestinationConfiguration:
+        BucketARN: !GetAtt MyBucket.Arn
+        CompressionFormat: GZIP
+        RoleARN: !GetAtt MyRole.Arn
+        BufferingHints:
+          IntervalInSeconds: 60
+          SizeInMBs: 1

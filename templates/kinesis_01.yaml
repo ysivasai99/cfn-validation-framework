@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Kinesis - Invalid stream mode
+Resources:
+  MyStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      Name: my-stream
+      ShardCount: 0
+      StreamModeDetails:
+        StreamMode: INVALID_MODE

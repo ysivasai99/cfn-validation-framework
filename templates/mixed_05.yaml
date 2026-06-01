@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 999.999.0.0/16
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: INVALID$$NAME
+  MyFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: python0.1
+      Handler: index.handler
+      Role: !Ref NonExistentRole
+      MemorySize: 99999
+      Code:
+        ZipFile: |
+          def handler(e, c): return 'ok'
+  MyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: INVALID_MODE
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: INVALID
+      KeySchema:
+        - AttributeName: id
+          KeyType: INVALID
