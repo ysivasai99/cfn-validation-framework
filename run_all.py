@@ -2,19 +2,15 @@ import subprocess
 import sys
 import os
 from pathlib import Path
-
 TEMPLATES_DIR = Path("/home/ysivasai99/cfn-pipeline/templates")
 PIPELINE      = "/home/ysivasai99/cfn-pipeline/pipeline.py"
-
 templates = sorted(TEMPLATES_DIR.glob("*.yaml"))
 total     = len(templates)
 success   = 0
 failed    = 0
-
 print("=" * 60)
 print(f"  BATCH EXPERIMENTS — {total} templates")
 print("=" * 60)
-
 for i, template in enumerate(templates, 1):
     print(f"\n[{i}/{total}] {template.name}")
     print("-" * 40)
@@ -24,7 +20,6 @@ for i, template in enumerate(templates, 1):
         success += 1
     else:
         failed += 1
-
 print("\n" + "=" * 60)
 print(f"  BATCH COMPLETE")
 print(f"  SUCCESS  : {success}")
