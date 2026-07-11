@@ -1,0 +1,117 @@
+experiment_id,timestamp,template_type,model,first_pass,iterations,errors_found,error_types,final_status,time_seconds,aws_cost_saved,notes
+EXP1782952973,2026-07-02 09:43:05,VPC + EC2,Claude,NO,1,1,syntax_error,SUCCESS,11.67,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782952986,2026-07-02 09:43:27,General CFN,Claude,NO,2,2,"syntax_error, runtime_error",SUCCESS,21.75,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953008,2026-07-02 09:43:50,VPC + EC2,Claude,NO,2,4,"syntax_error, runtime_error",SUCCESS,22.27,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953031,2026-07-02 09:44:02,VPC + EC2,Claude,NO,1,4,"wrong_value, syntax_error",SUCCESS,10.21,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953043,2026-07-02 09:44:20,SQS + SNS,Claude,NO,1,1,runtime_error,SUCCESS,17.58,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953061,2026-07-02 09:44:32,SQS + SNS,Claude,NO,1,1,syntax_error,SUCCESS,10.9,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953073,2026-07-02 09:44:44,VPC + EC2,Claude,NO,1,4,"wrong_value, syntax_error",SUCCESS,10.95,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953086,2026-07-02 09:44:54,RDS + VPC,Claude,YES,0,0,None,SUCCESS,7.11,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782953095,2026-07-02 09:45:05,S3 + Lambda,Claude,NO,1,1,syntax_error,SUCCESS,10.03,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953106,2026-07-02 09:45:13,SQS + SNS,Claude,YES,0,0,None,SUCCESS,7.32,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782953114,2026-07-02 09:45:27,Cognito,Claude,NO,1,3,syntax_error,SUCCESS,13.39,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953129,2026-07-02 09:45:39,Cognito,Claude,NO,1,1,syntax_error,SUCCESS,10.44,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953140,2026-07-02 09:45:59,Cognito,Claude,NO,1,1,runtime_error,SUCCESS,18.47,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953160,2026-07-02 09:46:07,Cognito,Claude,YES,0,0,None,SUCCESS,6.94,$0.0500,0 iterations — unsupported resources noted
+EXP1782953167,2026-07-02 09:46:25,Cognito,Claude,NO,1,1,runtime_error,SUCCESS,17.42,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953186,2026-07-02 09:46:36,Cognito,Claude,NO,1,1,syntax_error,SUCCESS,10.09,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953197,2026-07-02 09:46:47,Cognito,Claude,NO,1,1,wrong_value,SUCCESS,10.6,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953208,2026-07-02 09:47:21,RDS + VPC,Claude,NO,3,10,"syntax_error, runtime_error, wrong_value, best_practice",SUCCESS,33.1,$0.0500,3 iterations — Gate 1+1.5+2 passed
+EXP1782953244,2026-07-02 09:47:56,Lambda + DynamoDB,Claude,NO,1,10,"syntax_error, wrong_value",SUCCESS,32.66,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953277,2026-07-02 09:48:21,VPC + EC2,Claude,NO,2,5,"wrong_value, syntax_error, runtime_error",SUCCESS,24.13,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953302,2026-07-02 09:48:40,VPC + EC2,Claude,NO,2,4,"syntax_error, wrong_value",SUCCESS,17.17,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953321,2026-07-02 09:48:52,S3 Bucket,Claude,NO,1,6,"wrong_value, syntax_error",SUCCESS,11.75,$0.0500,1 iterations — unsupported resources noted
+EXP1782953333,2026-07-02 09:49:15,DynamoDB,Claude,NO,2,5,"syntax_error, runtime_error",SUCCESS,21.36,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953355,2026-07-02 09:49:22,DynamoDB,Claude,YES,0,0,None,SUCCESS,7.03,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782953363,2026-07-02 09:49:41,DynamoDB,Claude,NO,1,1,runtime_error,SUCCESS,17.33,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953381,2026-07-02 09:50:03,Lambda + DynamoDB,Claude,NO,2,2,"syntax_error, runtime_error",SUCCESS,21.57,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953404,2026-07-02 09:50:14,DynamoDB,Claude,NO,1,1,wrong_value,SUCCESS,10.26,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953415,2026-07-02 09:50:47,VPC + EC2,Claude,NO,3,7,"syntax_error, best_practice, wrong_value, runtime_error",ESCALATED,31.66,$0.0000,Gate 2 escalated
+EXP1782953448,2026-07-02 09:51:12,VPC + EC2,Claude,NO,3,5,"runtime_error, best_practice, syntax_error",SUCCESS,24.57,$0.0500,3 iterations — Gate 1+1.5+2 passed
+EXP1782953473,2026-07-02 09:51:40,VPC + EC2,Claude,NO,3,4,"best_practice, syntax_error, runtime_error",ESCALATED,26.43,$0.0000,Gate 2 escalated
+EXP1782953501,2026-07-02 09:52:05,VPC + EC2,Claude,NO,3,4,"best_practice, syntax_error, runtime_error",SUCCESS,24.44,$0.0500,3 iterations — Gate 1+1.5+2 passed
+EXP1782953528,2026-07-02 09:52:24,EC2 + ALB,Claude,NO,2,3,"best_practice, syntax_error",SUCCESS,16.25,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953545,2026-07-02 09:52:36,ECS + ECR,Claude,NO,1,1,syntax_error,SUCCESS,11.31,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953560,2026-07-02 09:52:50,ECS + ECR,Claude,NO,1,4,syntax_error,SUCCESS,10.81,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953571,2026-07-02 09:53:08,ECS + ECR,Claude,NO,2,3,syntax_error,SUCCESS,17.07,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953591,2026-07-02 09:53:24,ECS + ECR,Claude,NO,1,5,"wrong_value, syntax_error",SUCCESS,12.68,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953605,2026-07-02 09:53:36,ECS + ECR,Claude,NO,1,3,"wrong_value, syntax_error",SUCCESS,11.21,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953617,2026-07-02 09:53:51,VPC + EC2,Claude,NO,1,2,syntax_error,SUCCESS,13.78,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953632,2026-07-02 09:54:02,General CFN,Claude,NO,1,2,"wrong_value, syntax_error",SUCCESS,9.68,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953643,2026-07-02 09:54:20,ECS + ECR,Claude,NO,2,2,syntax_error,SUCCESS,17.24,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953661,2026-07-02 09:56:17,ECS + ECR,Claude,NO,2,2,"timeout, syntax_error",SUCCESS,116.71,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953780,2026-07-02 09:56:28,ECS + ECR,Claude,YES,0,0,None,SUCCESS,7.79,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782953790,2026-07-02 09:57:12,ElastiCache + VPC,Claude,NO,2,3,"best_practice, syntax_error",SUCCESS,42.6,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953835,2026-07-02 09:57:26,General CFN,Claude,YES,0,0,None,SUCCESS,11.35,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782953849,2026-07-02 09:57:47,General CFN,Claude,NO,1,1,syntax_error,SUCCESS,18.51,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953870,2026-07-02 09:58:15,General CFN,Claude,NO,2,2,"runtime_error, syntax_error",SUCCESS,25.35,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782953898,2026-07-02 09:58:33,General CFN,Claude,NO,1,1,wrong_value,SUCCESS,14.66,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953917,2026-07-02 09:59:00,S3 Bucket,Claude,NO,1,1,runtime_error,SUCCESS,23.05,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953943,2026-07-02 09:59:18,General CFN,Claude,NO,1,2,syntax_error,SUCCESS,14.74,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953960,2026-07-02 09:59:35,General CFN,Claude,NO,1,1,wrong_value,SUCCESS,14.89,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782953977,2026-07-02 09:59:47,S3 + Lambda,Claude,YES,0,0,None,SUCCESS,10.01,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782953990,2026-07-02 10:00:00,General CFN,Claude,YES,0,0,None,SUCCESS,10.04,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954003,2026-07-02 10:00:12,S3 + Lambda,Claude,YES,0,0,None,SUCCESS,9.35,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954015,2026-07-02 10:00:30,Step Functions,Claude,NO,1,2,syntax_error,SUCCESS,15.29,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954033,2026-07-02 10:00:41,S3 + Lambda,Claude,YES,0,0,None,SUCCESS,8.69,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954044,2026-07-02 10:00:59,Kinesis,Claude,NO,1,2,"wrong_value, syntax_error",SUCCESS,15.08,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954063,2026-07-02 10:01:26,Kinesis Firehose,Claude,NO,1,2,syntax_error,SUCCESS,23.53,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954089,2026-07-02 10:02:00,Kinesis Firehose,Claude,NO,2,6,"wrong_value, syntax_error, runtime_error",SUCCESS,30.69,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782954122,2026-07-02 10:03:20,Kinesis Firehose,Claude,NO,1,2,runtime_error,ESCALATED,78.56,$0.0000,Gate 2 escalated
+EXP1782954203,2026-07-02 10:03:48,Kinesis Firehose,Claude,NO,2,2,"wrong_value, runtime_error",SUCCESS,25.5,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782954231,2026-07-02 10:04:18,Kinesis Firehose,Claude,NO,1,2,runtime_error,ESCALATED,27.32,$0.0000,Gate 2 escalated
+EXP1782954262,2026-07-02 10:04:46,Kinesis Firehose,Claude,NO,1,2,runtime_error,ESCALATED,24.57,$0.0000,Gate 2 escalated
+EXP1782954290,2026-07-02 10:05:07,Kinesis,Claude,NO,1,2,syntax_error,SUCCESS,17.19,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954310,2026-07-02 10:05:32,Kinesis Firehose,Claude,NO,1,1,runtime_error,SUCCESS,22.64,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954336,2026-07-02 10:06:01,S3 + Lambda,Claude,NO,2,2,"runtime_error, syntax_error",SUCCESS,24.57,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782954364,2026-07-02 10:06:31,Lambda + DynamoDB,Claude,NO,2,2,"runtime_error, syntax_error",SUCCESS,27.11,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782954394,2026-07-02 10:06:44,S3 + Lambda,Claude,YES,0,0,None,SUCCESS,9.7,$0.0500,0 iterations — unsupported resources noted
+EXP1782954409,2026-07-02 10:07:04,S3 + Lambda,Claude,NO,1,1,syntax_error,SUCCESS,14.96,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954426,2026-07-02 10:07:44,Lambda + SQS,Claude,NO,3,3,"runtime_error, wrong_value",SUCCESS,38.04,$0.0500,3 iterations — Gate 1+1.5+2 passed
+EXP1782954466,2026-07-02 10:08:18,Lambda + DynamoDB,Claude,NO,1,7,"syntax_error, wrong_value",SUCCESS,31.75,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954503,2026-07-02 10:08:37,EC2 + ALB,Claude,NO,1,1,best_practice,SUCCESS,14.31,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954520,2026-07-02 10:08:50,Lambda + DynamoDB,Claude,YES,0,0,None,SUCCESS,9.93,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954533,2026-07-02 10:09:03,Lambda + DynamoDB,Claude,YES,0,0,None,SUCCESS,10.73,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954546,2026-07-02 10:09:21,Lambda + DynamoDB,Claude,NO,1,9,"syntax_error, wrong_value",SUCCESS,15.49,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954565,2026-07-02 10:09:34,Step Functions,Claude,YES,0,0,None,SUCCESS,8.98,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954576,2026-07-02 10:10:03,Kinesis,Claude,NO,2,5,"syntax_error, wrong_value, runtime_error",SUCCESS,27.04,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782954605,2026-07-02 10:10:17,RDS + VPC,Claude,YES,0,0,None,SUCCESS,11.05,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954619,2026-07-02 10:13:27,RDS + VPC,Claude,NO,5,5,"best_practice, timeout, syntax_error, runtime_error",SUCCESS,187.99,$0.0500,5 iterations — Gate 1+1.5+2 passed
+EXP1782954811,2026-07-02 10:13:55,RDS + VPC,Claude,NO,1,1,syntax_error,SUCCESS,24.09,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954837,2026-07-02 10:14:18,RDS + VPC,Claude,NO,1,2,wrong_value,SUCCESS,20.18,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954860,2026-07-02 10:14:39,RDS + VPC,Claude,NO,1,1,wrong_value,SUCCESS,19.58,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954882,2026-07-02 10:15:32,RDS + VPC,Claude,NO,1,1,best_practice,SUCCESS,49.83,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954936,2026-07-02 10:16:04,RDS + VPC,Claude,NO,1,1,syntax_error,SUCCESS,28.37,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782954968,2026-07-02 10:16:21,RDS + VPC,Claude,YES,0,0,None,SUCCESS,13.37,$0.0500,0 iterations — Gate 1+1.5+2 passed
+EXP1782954984,2026-07-02 10:17:30,RDS + VPC,Claude,NO,2,2,"best_practice, syntax_error",SUCCESS,66.22,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955052,2026-07-02 10:18:32,RDS + VPC,Claude,NO,2,2,"syntax_error, best_practice",SUCCESS,59.18,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955114,2026-07-02 10:19:34,RDS + VPC,Claude,NO,1,1,best_practice,SUCCESS,59.98,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955178,2026-07-02 10:22:47,RDS + VPC,Claude,NO,4,4,"timeout, best_practice, syntax_error, runtime_error",SUCCESS,188.99,$0.0500,4 iterations — Gate 1+1.5+2 passed
+EXP1782955372,2026-07-02 10:23:26,RDS + VPC,Claude,NO,1,1,best_practice,SUCCESS,34.38,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955409,2026-07-02 10:23:46,S3 + Lambda,Claude,NO,1,1,wrong_value,SUCCESS,16.86,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955428,2026-07-02 10:24:14,S3 + Lambda,Claude,NO,2,2,"runtime_error, syntax_error",SUCCESS,26.19,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955457,2026-07-02 10:24:31,S3 + Lambda,Claude,NO,1,3,"syntax_error, wrong_value",SUCCESS,13.92,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955473,2026-07-02 10:25:01,S3 + Lambda,Claude,NO,2,2,"syntax_error, runtime_error",SUCCESS,27.25,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955503,2026-07-02 10:25:19,S3 + Lambda,Claude,NO,1,1,wrong_value,SUCCESS,16.1,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955522,2026-07-02 10:25:48,S3 + Lambda,Claude,NO,2,2,"wrong_value, runtime_error",SUCCESS,26.09,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955550,2026-07-02 10:26:06,S3 + Lambda,Claude,NO,1,2,wrong_value,SUCCESS,15.37,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955568,2026-07-02 10:26:33,S3 + Lambda,Claude,NO,2,2,"runtime_error, syntax_error",SUCCESS,24.83,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955596,2026-07-02 10:26:57,S3 + Lambda,Claude,NO,1,1,runtime_error,SUCCESS,21.22,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955619,2026-07-02 10:27:24,S3 + Lambda,Claude,NO,2,4,"wrong_value, runtime_error, syntax_error",SUCCESS,24.81,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955646,2026-07-02 10:27:40,SQS + SNS,Claude,NO,1,1,syntax_error,SUCCESS,13.58,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955664,2026-07-02 10:28:10,SQS + SNS,Claude,NO,2,2,"wrong_value, runtime_error",SUCCESS,25.17,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955692,2026-07-02 10:28:28,SQS + SNS,Claude,NO,1,1,wrong_value,SUCCESS,16.02,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955711,2026-07-02 10:28:51,SQS + SNS,Claude,NO,1,1,runtime_error,SUCCESS,19.92,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955733,2026-07-02 10:29:07,SQS + SNS,Claude,NO,1,1,syntax_error,SUCCESS,13.9,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955750,2026-07-02 10:29:39,SQS + SNS,Claude,NO,2,2,"wrong_value, runtime_error",SUCCESS,29.0,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782955781,2026-07-02 10:29:56,Step Functions,Claude,NO,1,2,syntax_error,SUCCESS,14.88,$0.0500,1 iterations — Gate 1+1.5+2 passed
+EXP1782955798,2026-07-02 10:30:43,VPC + EC2,Claude,NO,3,4,"runtime_error, best_practice",ESCALATED,44.59,$0.0000,Gate 2 escalated
+EXP1782955845,2026-07-02 10:31:16,VPC + EC2,Claude,NO,2,3,"best_practice, runtime_error",ESCALATED,31.26,$0.0000,Gate 2 escalated
+EXP1782955878,2026-07-02 10:32:03,VPC + EC2,Claude,NO,3,4,"best_practice, runtime_error",ESCALATED,44.98,$0.0000,Gate 2 escalated
+EXP1782955926,2026-07-02 10:32:50,VPC + EC2,Claude,NO,3,5,"syntax_error, best_practice, runtime_error",ESCALATED,44.5,$0.0000,Gate 2 escalated
+EXP1782955973,2026-07-02 10:33:34,VPC + EC2,Claude,NO,3,3,"best_practice, runtime_error, syntax_error",SUCCESS,41.66,$0.0500,3 iterations — Gate 1+1.5+2 passed
+EXP1782956018,2026-07-02 10:34:19,VPC + EC2,Claude,NO,2,3,runtime_error,ESCALATED,41.1,$0.0000,Gate 2 escalated
+EXP1782956061,2026-07-02 10:35:03,VPC + EC2,Claude,NO,3,3,"runtime_error, best_practice, syntax_error",SUCCESS,41.75,$0.0500,3 iterations — Gate 1+1.5+2 passed
+EXP1782956105,2026-07-02 10:35:45,VPC + EC2,Claude,NO,2,2,"best_practice, runtime_error",SUCCESS,40.09,$0.0500,2 iterations — Gate 1+1.5+2 passed
+EXP1782956147,2026-07-02 10:36:25,VPC + EC2,Claude,NO,3,4,"best_practice, runtime_error, syntax_error",ESCALATED,37.52,$0.0000,Gate 2 escalated
+EXP1782956187,2026-07-02 10:37:09,VPC + EC2,Claude,NO,3,4,"runtime_error, best_practice",ESCALATED,42.46,$0.0000,Gate 2 escalated
