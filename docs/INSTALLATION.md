@@ -38,15 +38,15 @@ aws configure
 export ANTHROPIC_API_KEY="your-api-key-here"
 ```
 
-## Step 6: Run Pipeline
+## Step 6: Run Single Template
 ```bash
 export CFN_TEMPLATE_PATH="templates/vpc_ec2_01.yaml"
 python3 pipeline.py
 ```
 
-## Step 7: Run All Experiments
+## Step 7: Run All 116 Experiments
 ```bash
-python3 run_all_experiments.py
+python3 run_all.py
 ```
 
 ## Results
