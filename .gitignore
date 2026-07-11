@@ -9,3 +9,4 @@ new_experiments_log.txt
 broken_template.yaml
 pipeline_gemini.py
 run_gemini_experiments.py
+venv/
